@@ -2,28 +2,50 @@
 <html>
 <head>
 <meta content="text/html;charset=utf-8">
+<link rel="stylesheet" type="text/css" href="css/swiper-3.4.1.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/animate.css"/>
 <link rel="stylesheet" href="css/index.css" />
 </head>
 <body>
-	<div class="box">
-		<h1>王亚明的个人主页</h1>
-		<ul>
-			<li><a href="feijidazhan/feiji6.html" class="a1">飞机大战</a></li>
-			<li><a href="3d/3d.html"class="a2">元素周期表</a></li>
-		</ul>
-	</div>
 		<div class="content">
 				<div id="large-header" class="large-header">
 					<canvas id="demo-canvas"></canvas>
 				</div>
 			</div>
 		</div>
-	
+		 <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image:url(img.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(img.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(img.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(img.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(img.jpg)"></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+	<div class="box">
+		<h1>王亚明的个人主页</h1>
+		<span><a href="feijidazhan/feiji6.html" class="a1">飞机大战</a></span>
+	</div>
+	<script src="js/swiper-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/swiper.animate1.0.2.min.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
 	window.onload=function(){
-		var _width=document.documentElement.clientWidth || document.body.clientWidth;
-		var _size=_width/640*100;
-		document.documentElement.style.fontSize=_size+"px";
+		var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflow: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows : true
+        }
+    });
 	}
 </script>
 </body>
