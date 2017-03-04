@@ -10,7 +10,7 @@ $(function(){
 	var num = 0;
 	var timer = null;
 
-
+document.onselectstart=function (){ return false;}
 	$('.gps li').click(function(){	
 		var index = $(this).index();
 		$(this).addClass('current').siblings().removeClass('current');
@@ -85,9 +85,7 @@ $(function(){
 			$('.screen03 .app').css('display','none')
         });
 	})();
-	
-	
-	//icon鍥剧墖鎻掑叆
+	//icon
 	;(function(){
 		$('.icon ul li').each(function(index, element) {
             var index=index+1
@@ -98,8 +96,46 @@ $(function(){
 	
 
 })
+$(function(){
+			var imgL =$("#wrap img").size();
+			var Deg = 360/imgL;
+			var roY = 0, roX = -10, xn,yn,play=null;
+			$("#wrap img").each(function(i){
+				$(this).css('transform','rotateY('+ i*Deg +'deg) translateZ(350px)').attr('ondragstart','return false');
+			});
+			$(document).mousedown(function(ev){
+				// console.log("按下了");
+				var x_ = ev.clientX;
+				var y_ = ev.clientY;
+				$(this).bind('mousemove',function(ev){
+					// console.log("移动le");
+					var x = ev.clientX;
+					var y = ev.clientY;
+					 xn = x - x_;
+					 yn = y - y_;
+					roY += xn*0.2;
+					roX -= yn*0.1;
+					$('#wrap').css('transform','perspective(800px) rotateX('+ roX +'deg) rotateY('+roY+'deg)');
+					// $(document.body).append('<div style="width:5px;height:5px;background:#f00;position:absolute;top:'+y+'px;left:'+x+'px;"></div>')
+					 x_ = ev.clientX;
+					 y_ = ev.clientY;
+				});
+			}).mouseup(function(){
+				// console.log("抬起了")
+				$(this).unbind('mousemove');
+				play=setInterval(function(){
+					xn= xn*0.95;
+					yn=yn*0.95;
+					if(Math.abs(xn) <= 0.5 && Math.abs(yn)<=0.5){
+						clearInterval(play);
+					}
+					roY += xn*0.2;
+					roX -= yn*0.1;
+					$('#wrap').css('transform','perspective(800px) rotateX('+ roX +'deg) rotateY('+roY+'deg)');
+				},30);
+			});
 
-
+		});
 
 
 
