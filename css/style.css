@@ -182,10 +182,10 @@ transform-style:preserve-3d;transform:perspective(800px) rotateX(-10deg) rotateY
 .screen03 .web{width: 900px;height: 500px;margin-left: -350px;margin-top: -220px;z-index: 4;overflow: hidden;opacity: 0;}
 .screen03 .web ul{overflow: hidden;}
 .screen03 .web ul li{width: 180px;height: 180px;float: left;background: red;margin: 20px;border-radius:8px;border: 1px solid #fff;position: relative;overflow: hidden;}
-.screen03 .web ul li::after{content:"鐐瑰嚮娴忚";width: 180px;height: 30px;background: rgba(0,0,0,0.4);text-align: center;position: absolute;left: 0;bottom:-30px;color: #fff;transition:all 0.5s;-moz-transition:all 0.5s;-ms-transition:all 0.5s;-o-transition:all 0.5s;-webkit-transition:all 0.5s;}
+.screen03 .web ul li::after{content:"";width: 180px;height: 30px;background: rgba(0,0,0,0.4);text-align: center;position: absolute;left: 0;bottom:-30px;color: #fff;transition:all 0.5s;-moz-transition:all 0.5s;-ms-transition:all 0.5s;-o-transition:all 0.5s;-webkit-transition:all 0.5s;}
 .screen03 .web ul li a{width: 180px;height: 180px;display: block;}
-.screen03 .web li:nth-of-type(1){background: url(../images/zhuowang.png) no-repeat 0 0;}
-.screen03 .web li:nth-of-type(2){background:url(../images/hesheng.png) no-repeat 0 0;}
+.screen03 .web li:nth-of-type(1){background: url(../images/img.jpg) no-repeat 0 0;}
+.screen03 .web li:nth-of-type(2){background:url(../images/a4.png) no-repeat 0 0;}
 .screen03 .web li:nth-of-type(3){background:url(../images/zhengquan.jpg) no-repeat 0 0;}
 .screen03 .web li:nth-of-type(4){background:url(../images/kaidaer.png) no-repeat 0 0;}
 .screen03 .web li:nth-of-type(5){background:url(../images/zhongliang.png) no-repeat 0 0;}
